@@ -27,6 +27,17 @@
 ## Message-driven with queues (JMS)
 ## Event-driven (messaging-reactor)
 
+# Solr service:
+## require Solr service setup as per: https://lucene.apache.org/solr/guide/7_3/solr-tutorial.html#create-a-new-collection
+## start 2 nodes:
+> ./bin/solr start -c -p 8983 -s example/cloud/node1/solr
+>./bin/solr start -c -p 7574 -s example/cloud/node2/solr -z localhost:9983
+
+## Start com.service.number.Application with no VM params:
+
+## Invoke REST servce:
+> curl -v -H "Accept: application/json" http://localhost:6399/solr/techproducts?q=cat:electronics&rows=100
+
 
 
 

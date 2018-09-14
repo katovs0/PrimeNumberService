@@ -24,6 +24,13 @@
             <artifactId>jackson-dataformat-xml</artifactId>
         </dependency>
 
+        <!--SolrJ API for interacting with Apache Solr-->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>7.3.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
