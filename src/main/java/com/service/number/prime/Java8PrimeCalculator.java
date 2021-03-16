@@ -16,6 +16,11 @@ class Java8PrimeCalculator implements PrimeCalculatorService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public PrimeCalculatorStrategyName getStrategyName() {
+        return PrimeCalculatorStrategyName.Java8PrimeCalculatorStrategy;
+    }
+
     private static boolean isPrimeJava8(int number) {
         return number >= 2 && IntStream.rangeClosed(2, (int) Math.sqrt(number)).noneMatch(i -> number % i == 0);
     }

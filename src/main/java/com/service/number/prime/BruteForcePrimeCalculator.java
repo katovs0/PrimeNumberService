@@ -19,6 +19,11 @@ class BruteForcePrimeCalculator implements PrimeCalculatorService {
         return primes;
     }
 
+    @Override
+    public PrimeCalculatorStrategyName getStrategyName() {
+        return PrimeCalculatorStrategyName.BruteForcePrimeCalculatorStrategy;
+    }
+
     private static boolean isPrimeBruteForce(int number) {
         if (number < 2) {
             return false;

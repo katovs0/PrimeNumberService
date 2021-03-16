@@ -11,9 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -68,10 +66,10 @@ public class PrimeNumberControllerTest {
     }
 
     @Test
-    public void getPrimesInvalidAlgo() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/primes/1008?algorithm=invalid").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isIAmATeapot())
-                .andExpect(header().string("Content-Type", "application/json;charset=UTF-8"));
+    public void getPrimesInvalidAlgoUsesDefault() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/primes/2?algorithm=invalid").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("{\"initial\":2,\"primes\":[2]}")));
     }
 
     @Test

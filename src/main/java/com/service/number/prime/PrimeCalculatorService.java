@@ -6,4 +6,6 @@ public interface PrimeCalculatorService {
 
     List<Integer> getPrimes(int maxNumber);
 
+    PrimeCalculatorStrategyName getStrategyName();
+
 }

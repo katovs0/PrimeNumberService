@@ -22,6 +22,11 @@ class EratosthenesSievePrimeCalculator implements PrimeCalculatorService {
         return primeNumbers;
     }
 
+    @Override
+    public PrimeCalculatorStrategyName getStrategyName() {
+        return PrimeCalculatorStrategyName.EratosthenesSievePrimeCalculatorStrategy;
+    }
+
     private static boolean[] computeSieve(int maxNumber) {
         boolean primes[] = new boolean[maxNumber + 1];
         Arrays.fill(primes, true);

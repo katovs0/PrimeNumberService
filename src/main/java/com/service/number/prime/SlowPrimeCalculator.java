@@ -27,4 +27,9 @@ class SlowPrimeCalculator implements PrimeCalculatorService {
         return primes;
     }
 
+    @Override
+    public PrimeCalculatorStrategyName getStrategyName() {
+        return PrimeCalculatorStrategyName.SlowPrimeCalculatorStrategy;
+    }
+
 }
